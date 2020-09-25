@@ -42,17 +42,25 @@ void TestEqual()
 void Test1DArray()
 {
     puts("--- " __FUNCTION__);
-    rad::arraynd<int, 6> ab1;
-    static_assert(decltype(ab1)::dimension == 1, "dimension fail");
-    static_assert(rad::equal(ab1.size(), std::array<size_t, 1> { 6 }), "size fail");
+    constexpr rad::arraynd<int, 6> a1;
+    static_assert(decltype(a1)::dimension == 1, "dimension fail");
+    static_assert(rad::equal(a1.size(), std::array<size_t, 1> { 6 }), "size fail");
+
+    constexpr int a2array[] = { 7, 3, 6 };
+    constexpr rad::arraynd<int, 3> a2 = a2array;
+    //static_assert(rad::equal(a2, a2array), "equal fail");
 }
 
 void Test2DArray()
 {
     puts("--- " __FUNCTION__);
-    constexpr const rad::arraynd<int, 2, 3> a;
-    static_assert(decltype(a)::dimension == 2, "dimension fail");
-    static_assert(rad::equal(a.size(), std::array<size_t, 2> { 2, 3 }), "size fail");
+    constexpr const rad::arraynd<int, 2, 3> a1;
+    static_assert(decltype(a1)::dimension == 2, "dimension fail");
+    static_assert(rad::equal(a1.size(), std::array<size_t, 2> { 2, 3 }), "size fail");
+
+    constexpr int a2array[3][2] = { { 5, 7 }, { 2, 9 }, { 8, 3 } };
+    constexpr rad::arraynd<int, 3, 2> a2 = a2array;
+    //static_assert(rad::equal(a2, a2array), "equal fail");
 }
 
 int main()
