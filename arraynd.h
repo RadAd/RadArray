@@ -31,20 +31,20 @@ namespace rad
 
         constexpr inner_type& at(size_t i)
         {
-            return arr().at(i);
+            return inner.at(i);
         }
         constexpr const inner_type& at(size_t i) const
         {
-            return arr().at(i);
+            return inner.at(i);
         }
 
         constexpr inner_type& operator[](size_t i)
         {
-            return arr()[i];
+            return inner[i];
         }
         constexpr const inner_type& operator[](size_t i) const
         {
-            return arr()[i];
+            return inner[i];
         }
 
     private:
@@ -86,20 +86,20 @@ namespace rad
 
         constexpr inner_type& at(size_t i)
         {
-            return arr().at(i);
+            return inner.at(i);
         }
         constexpr const inner_type& at(size_t i) const
         {
-            return arr().at(i);
+            return inner.at(i);
         }
 
         constexpr inner_type& operator[](size_t i)
         {
-            return arr()[i];
+            return inner[i];
         }
         constexpr const inner_type& operator[](size_t i) const
         {
-            return arr()[i];
+            return inner[i];
         }
 
     private:
