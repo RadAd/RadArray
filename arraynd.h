@@ -29,8 +29,23 @@ namespace rad
         {
         }
 
-        constexpr std::array<inner_type, s>& arr() { return inner; }
-        constexpr const std::array<inner_type, s>& arr() const { return inner; }
+        constexpr inner_type& at(size_t i)
+        {
+            return arr().at(i);
+        }
+        constexpr const inner_type& at(size_t i) const
+        {
+            return arr().at(i);
+        }
+
+        constexpr inner_type& operator[](size_t i)
+        {
+            return arr()[i];
+        }
+        constexpr const inner_type& operator[](size_t i) const
+        {
+            return arr()[i];
+        }
 
     private:
         template <std::size_t... I>
@@ -38,6 +53,9 @@ namespace rad
         {
             return { inner_type(init[I])... };
         }
+
+        constexpr std::array<inner_type, s>& arr() { return inner; }
+        constexpr const std::array<inner_type, s>& arr() const { return inner; }
 
         std::array<inner_type, s>   inner;
     };
@@ -66,8 +84,23 @@ namespace rad
         {
         }
 
-        constexpr std::array<inner_type, s>& arr() { return inner; }
-        constexpr const std::array<inner_type, s>& arr() const { return inner; }
+        constexpr inner_type& at(size_t i)
+        {
+            return arr().at(i);
+        }
+        constexpr const inner_type& at(size_t i) const
+        {
+            return arr().at(i);
+        }
+
+        constexpr inner_type& operator[](size_t i)
+        {
+            return arr()[i];
+        }
+        constexpr const inner_type& operator[](size_t i) const
+        {
+            return arr()[i];
+        }
 
     private:
         template <std::size_t... I>
@@ -75,6 +108,9 @@ namespace rad
         {
             return { inner_type(init[I])... };
         }
+
+        constexpr std::array<inner_type, s>& arr() { return inner; }
+        constexpr const std::array<inner_type, s>& arr() const { return inner; }
 
         std::array<inner_type, s>   inner;
     };

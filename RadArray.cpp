@@ -49,9 +49,9 @@ void Test1DArray()
     constexpr int a2array[] = { 7, 3, 6 };
     constexpr rad::arraynd<int, 3> a2 = a2array;
     //static_assert(rad::equal(a2, a2array), "equal fail");
-    static_assert(a2.arr()[0] == 7, "comparison fail");
-    static_assert(a2.arr()[1] == 3, "comparison fail");
-    static_assert(a2.arr()[2] == 6, "comparison fail");
+    static_assert(a2[0] == 7, "comparison fail");
+    static_assert(a2[1] == 3, "comparison fail");
+    static_assert(a2[2] == 6, "comparison fail");
 }
 
 void Test2DArray()
@@ -64,12 +64,12 @@ void Test2DArray()
     constexpr int a2array[3][2] = { { 5, 7 }, { 2, 9 }, { 8, 3 } };
     constexpr rad::arraynd<int, 3, 2> a2 = a2array;
     //static_assert(rad::equal(a2, a2array), "equal fail");
-    static_assert(a2.arr()[0].arr()[0] == 5, "comparison fail");
-    static_assert(a2.arr()[0].arr()[1] == 7, "comparison fail");
-    static_assert(a2.arr()[1].arr()[0] == 2, "comparison fail");
-    static_assert(a2.arr()[1].arr()[1] == 9, "comparison fail");
-    static_assert(a2.arr()[2].arr()[0] == 8, "comparison fail");
-    static_assert(a2.arr()[2].arr()[1] == 3, "comparison fail");
+    static_assert(a2[0][0] == 5, "comparison fail");
+    static_assert(a2[0][1] == 7, "comparison fail");
+    static_assert(a2[1][0] == 2, "comparison fail");
+    static_assert(a2[1][1] == 9, "comparison fail");
+    static_assert(a2[2][0] == 8, "comparison fail");
+    static_assert(a2[2][1] == 3, "comparison fail");
 }
 
 int main()
