@@ -29,6 +29,9 @@ namespace rad
         {
         }
 
+        constexpr std::array<inner_type, s>& arr() { return inner; }
+        constexpr const std::array<inner_type, s>& arr() const { return inner; }
+
     private:
         template <std::size_t... I>
         static constexpr std::array<inner_type, s> to_array_inner(const native_type& init, std::index_sequence<I...>)
@@ -62,6 +65,9 @@ namespace rad
             : inner(to_array_inner(init, std::make_index_sequence<s> {}))
         {
         }
+
+        constexpr std::array<inner_type, s>& arr() { return inner; }
+        constexpr const std::array<inner_type, s>& arr() const { return inner; }
 
     private:
         template <std::size_t... I>

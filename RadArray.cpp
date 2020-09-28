@@ -49,6 +49,9 @@ void Test1DArray()
     constexpr int a2array[] = { 7, 3, 6 };
     constexpr rad::arraynd<int, 3> a2 = a2array;
     //static_assert(rad::equal(a2, a2array), "equal fail");
+    assert(a2.arr()[0] == 7);
+    assert(a2.arr()[1] == 3);
+    assert(a2.arr()[2] == 6);
 }
 
 void Test2DArray()
@@ -61,6 +64,12 @@ void Test2DArray()
     constexpr int a2array[3][2] = { { 5, 7 }, { 2, 9 }, { 8, 3 } };
     constexpr rad::arraynd<int, 3, 2> a2 = a2array;
     //static_assert(rad::equal(a2, a2array), "equal fail");
+    assert(a2.arr()[0].arr()[0] == 5);
+    assert(a2.arr()[0].arr()[1] == 7);
+    assert(a2.arr()[1].arr()[0] == 2);
+    assert(a2.arr()[1].arr()[1] == 9);
+    assert(a2.arr()[2].arr()[0] == 8);
+    assert(a2.arr()[3].arr()[1] == 7);
 }
 
 int main()
